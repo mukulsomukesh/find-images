@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { Heading } from '@chakra-ui/react'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Home from './Pages/Home';
 
 
 function App() {
@@ -24,8 +24,7 @@ function App() {
   return (
 <>
 
-<Heading textAlign={"center"}>Axios Work: {temp}</Heading>
-<Heading  textAlign={"center"}>Chakraui Work: Yes</Heading>
+<Home/>
 
 </>
   );
