@@ -1,26 +1,19 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getImages } from '../Redux/AppReducer/action';
 
 function Body() {
 
-    const [temp, setTemp] = useState("")
+  const images = useSelector((state) => state.AppReducer.images)
+  
+  const dispatch = useDispatch();
 
-  useEffect(()=>{
-    axios.get('https://api.unsplash.com/search/photos?per_page=50&query=flowers&client_id=KRFOvRm4NohXdmfsevdelfYzvq8WWVp3jfwLDJatWhc')
-    .then(function (response) {
-        const data = response.data
-      setTemp(data)
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error)
-        
-    })
+  useEffect(() => {
+    dispatch(getImages())
   },[])
-
-  console.log(temp)
-
-
+  console.log(images)
+ 
   return (
     <div>
 
