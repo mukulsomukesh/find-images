@@ -3,28 +3,15 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Home from './Pages/Home';
+import {Box, SimpleGrid, GridItem } from '@chakra-ui/react'
 
 
 function App() {
-
-  const [temp, setTemp] = useState()
-
-  useEffect(()=>{
-    axios.get('https://fakestoreapi.com/products/1')
-    .then(function (response) {
-      setTemp("Yes")
-    })
-    .catch(function (error) {
-      // handle error
-      setTemp("No")
-    })
-  },[])
-
-
   return (
 <>
 
 <Home/>
+
 
 </>
   );

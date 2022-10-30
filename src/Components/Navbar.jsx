@@ -11,12 +11,7 @@ export default function Simple() {
     <>
       <Box px={4} pl="3%" pr="3%"  as="header" position="fixed" bg="#0f1624" w="full">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'} >
-        <Box as="b" fontSize={"30px"}  color="#dc143c" display={"flex"}> 
-        <Input borderRightRadius={"0px"} placeholder='Basic usage' w="80" />
-        <Button borderLeftRadius={"0px"}  leftIcon={<Search2Icon/>}></Button>
-         </Box>
 
-        <Spacer/>
           <IconButton
             size={'md'}
             bg="#dc143c"
@@ -25,6 +20,7 @@ export default function Simple() {
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
+
           <HStack spacing={8} alignItems={'center'}>
             <HStack
               as={'nav'}
@@ -38,6 +34,14 @@ export default function Simple() {
             </HStack>
              {/* <BsFillSunFill size="25px" />  <BsFillMoonFill size="25px" color='black' />  */}
           </HStack>
+
+
+
+          <Spacer/>
+<Box as="b" fontSize={"30px"}  color="#dc143c" display={"flex"}> 
+        <Input borderRightRadius={"0px"} placeholder='Basic usage' w="80" />
+        <Button borderLeftRadius={"0px"}  leftIcon={<Search2Icon/>}></Button>
+         </Box>
         </Flex>
 
         {isOpen ? (
@@ -49,7 +53,10 @@ export default function Simple() {
             </Stack>
           </Box>
         ) : null}
+
       </Box>
+
+
 
       {/* <Box p={4}>Main Content Here</Box> */}
     </>
