@@ -1,8 +1,9 @@
 import axios from "axios";
 import * as types from "./actionTypes";
-const getImages = () => (dispatch) => {
+const getImages = (queryParams) => (dispatch) => {
     dispatch({type:types.GET_IMAGE_DATA_REQUEST})
-    return axios.get("https://api.unsplash.com/search/photos?per_page=50&query=flowers&orientation=landscape&client_id=KRFOvRm4NohXdmfsevdelfYzvq8WWVp3jfwLDJatWhc")
+    // return axios.get("https://api.unsplash.com/search/photos?per_page=15&query=baby&orientation=landscape&client_id=KRFOvRm4NohXdmfsevdelfYzvq8WWVp3jfwLDJatWhc",dispatch)
+ return axios.get("https://api.unsplash.com/search/photos?client_id=KRFOvRm4NohXdmfsevdelfYzvq8WWVp3jfwLDJatWhc",queryParams)
     .then(r => {
         dispatch({type:types.GET_IMAGE_DATA_SUCCESS,payload:r.data})
     })
