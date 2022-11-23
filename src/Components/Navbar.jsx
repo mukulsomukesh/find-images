@@ -1,20 +1,36 @@
-import {Input, Button , Box, Flex, HStack, Link, IconButton, useDisclosure, Stack, Spacer} from '@chakra-ui/react';
+import {Input, Button, Text , Box, Flex, HStack, Select , IconButton, useDisclosure, Stack, Spacer} from '@chakra-ui/react';
 import {HamburgerIcon, CloseIcon, Search2Icon} from "@chakra-ui/icons"
+import { useState } from 'react';
 
-const Links = ["Landscape","Portrait","Squarish"];
+const Links = ["Black","White","Yellow", "orange", "Red", "Purple", "Magenta", "Green", "Teal", "Blue"];
 
 
-export default function Simple() {
+export default function Simple({setOrientation, query, setQuery, setColor}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const [str, setStr]=useState("")
+  console.log(str, query)
   return (
     <>
-      <Box px={4} pl="3%" pr="3%"  as="header" position="fixed" bg="#3b5998" w="full">
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'} >
+          <Box  as="header" position={"absolute"}  pos={'fixed'}  w="full">
 
+          <Flex h={16} pl="3%" pr="3%" alignItems={'center'} justifyContent={'space-between'} bg="#3b5998" w="full" >
+            <Text as="b" color="white" fontSize={{ base: 'xs', md: 'sm', lg: 'lg' }}> Login/Singup </Text>
+
+<Spacer/>
+<Box as="b" fontSize={"30px"}  color="white" display={"flex"} w="250px"> 
+<Input border="2px" borderRightRadius={"0px"} placeholder='Basic usage' value={str} onChange={(e)=>{setStr(e.target.value)}} />
+<Button borderLeftRadius={"0px"}  leftIcon={<Search2Icon color="#0f1624"/>} 
+onClick={()=>{ setQuery(str) }} ></Button>
+</Box>
+</Flex>
+
+      {/* <Box px={4} pl="3%" pr="3%"  as="header" position="fixed" bg="#3b5998" w="full"> */}
+
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'} bg="white" pl="3%" pr="3%" >
+        
           <IconButton
             size={'md'}
-            bg="#0f1624"
+            bg="#3b5998"
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
@@ -24,13 +40,16 @@ export default function Simple() {
           <HStack spacing={8} alignItems={'center'}>
             <HStack
               as={'nav'}
-              color="white"          
+              color="#3b5998"          
               // _hover={{border:"2px", BorderColor: '#dc143c' }}
               spacing={5}
               display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
-                <Link  style={{textDecoration:"none"}}  key={link} as="b" >{link}</Link>
-              ))}
+           <Box w="fit-content" h="fit-content" >
+           <Text  style={{textDecoration:"none"}}  key={link} as="b" onClick={()=>{ setColor(link.toLowerCase()) }}  >{link}</Text>
+           </Box>
+           ))}
+              
             </HStack>
              {/* <BsFillSunFill size="25px" />  <BsFillMoonFill size="25px" color='black' />  */}
           </HStack>
@@ -39,8 +58,11 @@ export default function Simple() {
 
           <Spacer/>
 <Box as="b" fontSize={"30px"}  color="white" display={"flex"}> 
-        <Input border="2px" borderRightRadius={"0px"} placeholder='Basic usage' w="80" />
-        <Button borderLeftRadius={"0px"}  leftIcon={<Search2Icon color="#0f1624"/>}></Button>
+  <Select variant='filled' color="black" placeholder='orientation' onChange={(e)=>{setOrientation(e.target.value)}} >
+  <option value="landscape"> Landscape</option>
+  <option value="portrait"> Portrait</option>
+  <option value="squarish"> Squarish</option>
+    </Select>
          </Box>
         </Flex>
 
@@ -48,13 +70,14 @@ export default function Simple() {
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
-                <Link key={link} as="b">{link}</Link>
+                <Text key={link} color="white" as="b" onClick={()=>{ setColor(link.toLowerCase()) }}>{link}</Text>
               ))}
             </Stack>
           </Box>
         ) : null}
 
       </Box>
+
 
 
 
