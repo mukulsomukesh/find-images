@@ -2,6 +2,7 @@ import * as types from "./actionTypes"
 
 const initialState = {
   images: [],
+  totalPage:0,
   isLoading: false,
   isError: false,
 };
