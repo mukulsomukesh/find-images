@@ -29,7 +29,7 @@ function Body({orientation}) {
 {images.results?.map((el)=>(
     <Link to={"/SingleImage"} >
   <Box key={el.id} m="15px" ml="auto" mr="auto" h="fit-content" w="fit-content" border="2px" borderColor={"black"}> 
-      <Image  m="auto" h="400px" w="290px" src={el.urls.regular} />
+      <Image  m="auto" h="400px" w="290px" src={el.urls.thumb} />
   </Box>
   </Link>
 ))}
@@ -41,7 +41,7 @@ function Body({orientation}) {
 {images.results?.map((el)=>(
     <Link to={"/SingleImage"} >
   <Box key={el.id} m="15px" ml="auto" mr="auto" h="fit-content" w="fit-content" border="2px" borderColor={"black"}> 
-      <Image  m="auto" h="290px" w="290px" src={el.urls.full} />
+      <Image  m="auto" h="290px" w="290px" src={el.urls.thumb} />
   </Box>
   </Link>
 ))}

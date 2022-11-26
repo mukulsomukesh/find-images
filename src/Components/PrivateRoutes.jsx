@@ -5,7 +5,7 @@ const PrivateRoute = ( {children} ) => {
     const isLogin = useSelector((state) => state.AuthReducer.isLogin)
 
 if(!isLogin){
-    return  <Navigate to="/login"></Navigate>
+    return  <Navigate to="/Authenticate"></Navigate>
     }
     return children;
   

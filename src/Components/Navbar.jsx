@@ -26,7 +26,7 @@ export default function Simple({setOrientation, query, setQuery, setColor}) {
   isLogin?
   <Text as="b" color="white" fontSize={{ base: 'xs', md: 'sm', lg: 'lg' }}>Hi, {name} </Text>
   :
-  <Link to={"/Login"} >  <Text as="b" color="white" fontSize={{ base: 'xs', md: 'sm', lg: 'lg' }}> Login/Singup </Text>
+  <Link to={"/Authenticate"} >  <Text as="b" color="white" fontSize={{ base: 'xs', md: 'sm', lg: 'lg' }}> Login/Singup </Text>
   </Link>
 }
 

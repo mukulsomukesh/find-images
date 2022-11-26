@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "../Pages/Login"
+import Authenticate from "../Pages/Authenticate"
 import Home from "../Pages/Home"
 import SingleImage from "./SingleImage";
 import PrivateRoute from "../Components/PrivateRoutes";
@@ -13,7 +13,7 @@ function AllRoutes() {
           <Route path="/" element={<Home />}>
             {" "}
           </Route>
-          <Route path="/Login" element={<Login />}>
+          <Route path="/Authenticate" element={<Authenticate />}>
             {" "}
           </Route>
           <Route path="/SingleImage" element={ <PrivateRoute> <SingleImage /> </PrivateRoute>  } >
