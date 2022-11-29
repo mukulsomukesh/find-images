@@ -15,7 +15,7 @@ function Body({orientation}) {
 {orientation=="landscape" ? 
 <SimpleGrid minChildWidth={"400px"} w="94%" m="auto" pt="130px">
 {images.results?.map((el)=>(
-  <Link to={"/SingleImage"} >
+  <Link to={`/SingleImage/${el.id}`} >
   <Box key={el.id} m="10px" ml="auto" mr="auto"  h="fit-content" w="fit-content" border="2px" borderColor={"black"}> 
       <Image  m="auto" h="250px" w="400px" src={el.urls.thumb} />
   </Box>

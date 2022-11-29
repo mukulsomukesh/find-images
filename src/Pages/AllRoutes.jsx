@@ -6,8 +6,8 @@ import PrivateRoute from "../Components/PrivateRoutes";
 
 function AllRoutes() {
     return (
+
       <div>
-        {/* Routes */}
   
         <Routes>
           <Route path="/" element={<Home />}>
@@ -16,15 +16,13 @@ function AllRoutes() {
           <Route path="/Authenticate" element={<Authenticate />}>
             {" "}
           </Route>
-          <Route path="/SingleImage" element={ <PrivateRoute> <SingleImage /> </PrivateRoute>  } >
+          <Route path="/SingleImage/:id" element={ <PrivateRoute> <SingleImage /> </PrivateRoute>  } >
             {" "}
           </Route> 
         </Routes>
   
-        {/* Home */}
-        {/* Login */}
-        {/* Private Route: Dashboard */}
       </div>
+    
     );
   }
   
